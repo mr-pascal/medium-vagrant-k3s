@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   # Kubernetes API Access
   config.vm.network "forwarded_port", guest: 6443, host: 6443
 
-  # Expose NodePort IP's
+  # Expose NodePort ports
   for p in 30000..30100
     config.vm.network "forwarded_port", guest: p, host: p, protocol: "tcp"
     end
